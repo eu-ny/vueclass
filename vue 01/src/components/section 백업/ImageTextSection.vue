@@ -3,71 +3,35 @@
         <h2 class="blind">애니멀 유치원 살펴보기</h2>
         <div class="imgText__inner" :class="layout">
             <div class="imgText__txt">
-                <span>{{ titles[0].smallTitle }}</span>
-                <h3>{{ titles[0].title }}</h3>
+                <span>ANIMALS</span>
+                <h3>애니멀 유치원 살펴보기</h3>
                 <p>
-                    {{ titles[0].desc }}
+                    교육 및 사회성이 필요한 반려동물들의 애니멀 유치원 소개 사이트 입니다.
                 </p>
                 <ul>
-                    <li v-for="imgText in imgTexts" v-bind:key="imgText">
-                        <a href="#">{{ imgText.list }}</a>
-                    </li>
+                    <li><a href="#">애니멀 유치원 사이트</a></li>
+                    <li><a href="#">댕댕꾸러기 소개</a></li>
+                    <li><a href="#">칭찬해요</a></li>
+                    <li><a href="#">서운해요</a></li>
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">ANIMALS Youtube</a></li>
                 </ul>
             </div>
-            <div class="imgText__img" v-for="imgText2 in imgTexts2" v-bind:key="imgText2" :class="`${imgText2.className}`">
-                <li><a href="#">{{ imgText2.btn }}</a></li>
+            <div class="imgText__img img1">
+                <li><a href="#">멍멍 유치원 사이트</a></li>
+            </div>
+            <div class="imgText__img img2">
+                <li><a href="#" class="blue">야옹 유치원 사이트</a></li>
             </div>
         </div>
     </section>
 </template>
 
 <script>
-export default {
-    props: {
-        attr: String,
-        layout: String,
-    },
-
-    data: function () {
-        return {
-            titles: [
-                {
-                    smallTitle: "ANIMALS",
-                    title: "애니멀 유치원 살펴보기",
-                    desc: "교육 및 사회성이 필요한 반려동물들의 애니멀 유치원 소개 사이트 입니다.",
-                },
-            ],
-            imgTexts: [
-                {
-                    list: "애니멀 유치원 사이트",
-                },
-                {
-                    list: "댕댕꾸러기 소개",
-                },
-                {
-                    list: "칭찬해요",
-                },
-                {
-                    list: "서운해요",
-                },
-                {
-                    list: "공지사항",
-                },
-                {
-                    list: "ANIMALS Youtube",
-                },
-            ],
-            imgTexts2: [
-                {
-                    className: "img1",
-                    btn: "멍멍 유치원 사이트",
-                },
-                {
-                    className: "img2",
-                    btn: "야옹 유치원 사이트",
-                },
-            ],
-        };
+    export default {
+        props: {
+            attr: String,
+            layout: String
     },
 };
 </script>
@@ -123,7 +87,7 @@ export default {
     color: #666;
 }
 .imgText__txt ul li::before {
-    content: "";
+    content: '';
     width: 5px;
     height: 5px;
     border-radius: 50%;
@@ -162,11 +126,11 @@ export default {
 }
 
 /* 반응형 */
-@media (max-width: 960px) {
+@media(max-width: 960px){
     .imgText__inner {
         flex-wrap: wrap;
     }
-
+    
     .imgText__txt h3 {
         font-size: 40px;
     }
@@ -188,8 +152,9 @@ export default {
     .imgText__inner > div.imgText__img {
         width: 49%;
     }
+
 }
-@media (max-width: 600px) {
+@media(max-width: 600px){
     .imgText__txt span {
         text-align: center;
         font-size: 14px;

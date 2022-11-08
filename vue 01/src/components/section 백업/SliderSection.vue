@@ -2,34 +2,58 @@
     <section id="sliderType" class="slider__wrap nexon scroll">
         <h2 class="blind">슬라이드 영역</h2>
         <div class="slider__inner">
-            <swiper
-                :navigation="true"
-                :pagination="{
-                    clickable: true,
-                }"
-                :centeredSlides="true"
-                :modules="modules"
-                :spaceBetween="30"
-                :autoplay="{
-                    delay: 2500,
-                    disableOnInteraction: false,
-                }"
-                class="mySwiper"
-            >
-                <swiper-slide
-                    v-for="slider in sliders"
-                    v-bind:key="slider.title"
-                    :class="slider.title"
-                >
+            <swiper 
+            :navigation="true" 
+            :pagination="{
+                clickable: true,
+            }"
+            :centeredSlides="true"
+            :modules="modules"
+            :spaceBetween="30"
+            :autoplay="{
+            delay: 2500,
+            disableOnInteraction: false,
+            }"
+            class="mySwiper">
+                <swiper-slide>
                     <div class="desc">
-                        <span>{{ slider.small }}</span>
-                        <h3>{{ slider.title }}</h3>
+                        <span>ANIMALS</span>
+                        <h3>CUTE ANIMALS</h3>
                         <p>
-                            {{ slider.desc }}
+                            당신의 반려 동물에게 새로운 친구를 만나게 하고 싶나요?!<br />
+                            여기 애니멀 유치원으로 어서 오세요!
                         </p>
                         <div class="btn">
-                            <a href="/">{{ slider.btn1 }}</a>
-                            <a href="/" class="black">{{ slider.btn2 }}</a>
+                            <a href="/">자세히 보기</a>
+                            <a href="/" class="black">사이트 보기</a>
+                        </div>
+                    </div>
+                </swiper-slide>
+                <swiper-slide>
+                    <div class="desc">
+                        <span>ANIMALS</span>
+                        <h3>CUTE ANIMALS</h3>
+                        <p>
+                            당신의 반려 동물에게 새로운 친구를 만나게 하고 싶나요?!<br />
+                            여기 애니멀 유치원으로 어서 오세요!
+                        </p>
+                        <div class="btn">
+                            <a href="/">자세히 보기</a>
+                            <a href="/" class="black">사이트 보기</a>
+                        </div>
+                    </div>
+                </swiper-slide>
+                <swiper-slide>
+                    <div class="desc">
+                        <span>ANIMALS</span>
+                        <h3>CUTE ANIMALS</h3>
+                        <p>
+                            당신의 반려 동물에게 새로운 친구를 만나게 하고 싶나요?!<br />
+                            여기 애니멀 유치원으로 어서 오세요!
+                        </p>
+                        <div class="btn">
+                            <a href="/">자세히 보기</a>
+                            <a href="/" class="black">사이트 보기</a>
                         </div>
                     </div>
                 </swiper-slide>
@@ -49,46 +73,18 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 // import required modules
-import { Navigation, Pagination, Autoplay } from "swiper";
+import { Navigation,Pagination, Autoplay } from "swiper";
 
 export default {
-    components: {
-        Swiper,
-        SwiperSlide,
-    },
-    setup() {
-        return {
-            modules: [Navigation, Pagination, Autoplay],
-        };
-    },
-
-    data: function () {
-        return {
-            sliders: [
-                {
-                    title: "CUTE ANIMALS",
-                    small: "ANIMALS",
-                    desc: "당신의 반려 동물에게 새로운 친구를 만나게 하고 싶나요?! 여기 애니멀 유치원으로 어서 오세요!",
-                    btn1: "자세히 보기",
-                    btn2: "사이트 보기",
-                },
-                {
-                    title: "CUTE ANIMALS",
-                    small: "ANIMALS",
-                    desc: "당신의 반려 동물에게 새로운 친구를 만나게 하고 싶나요?! 여기 애니멀 유치원으로 어서 오세요!",
-                    btn1: "자세히 보기",
-                    btn2: "사이트 보기",
-                },
-                {
-                    title: "CUTE ANIMALS",
-                    small: "ANIMALS",
-                    desc: "당신의 반려 동물에게 새로운 친구를 만나게 하고 싶나요?! 여기 애니멀 유치원으로 어서 오세요!",
-                    btn1: "자세히 보기",
-                    btn2: "사이트 보기",
-                },
-            ],
-        };
-    },
+  components: {
+    Swiper,
+    SwiperSlide,
+  },
+  setup() {
+    return {
+      modules: [Navigation, Pagination, Autoplay],
+    };
+  },
 };
 </script>
 
@@ -102,8 +98,7 @@ export default {
 }
 .slider__img {
     /* height: 500px;  밑에 세부 영역 잡기 전에 대충 잡아놓은 영역이므로 지우기 */
-    background: url(../../assets/img/slider_type01_04.jpg) no-repeat center /
-        cover;
+    background: url(../../assets/img/slider_type01_04.jpg) no-repeat center / cover;
 }
 .slider__img .desc {
     width: 1160px;
@@ -186,8 +181,7 @@ export default {
 
 /* swiper */
 .swiper-slide {
-    background: url(../../assets/img/slider_type01_04.jpg) no-repeat center /
-        cover;
+    background: url(../../assets/img/slider_type01_04.jpg) no-repeat center / cover;
 }
 .swiper-slide .desc {
     width: 1160px;
@@ -202,7 +196,7 @@ export default {
     background-color: #fff;
     padding: 6px 14px 0 14px;
     border-radius: 30px;
-    text-transform: uppercase;
+    text-transform:uppercase;
     margin-bottom: 15px;
     display: inline-block;
 }
@@ -242,7 +236,7 @@ export default {
 .swiper-button-next {
     background-position: -50px 0;
 }
-.swiper-button-next::after,
+.swiper-button-next::after, 
 .swiper-button-prev::after {
     opacity: 0;
 }
@@ -282,7 +276,7 @@ export default {
 }
 
 /* 반응형 */
-@media (max-width: 960px) {
+@media (max-width: 960px){
     .swiper-slide .desc {
         width: 100%;
         text-align: center;
@@ -291,7 +285,7 @@ export default {
         font-size: 70px;
     }
 }
-@media (max-width: 600px) {
+@media (max-width: 600px){
     .swiper-slide .desc {
         padding: 80px 0;
     }
@@ -306,6 +300,5 @@ export default {
         padding: 10px 25px;
     }
 }
-@media (max-width: 480px) {
-}
+@media (max-width: 480px){}
 </style>

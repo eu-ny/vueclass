@@ -1,54 +1,33 @@
 <template>
     <section id="imageType" :class="'image__wrap scroll ' + attr">
-        <h2>{{titles[0].title}}</h2>
-        <p>{{titles[0].desc}}</p>
+        <h2>애니멀 유치원</h2>
+        <p>🐶 당신의 반려 동물에 맞는 반을 골라주세요!🐱</p>
         <div class="image__inner" :class="layout">
-            <article class="image img1" v-for="imageinfo in images" v-bind:key="imageinfo" :class="`${imageinfo.className}`">     
-                <h3 class="image__title">  {{imageinfo.title}}</h3>
+            <article class="image img1">
+                <h3 class="image__title">멍멍 유치원</h3>
                 <p class="image__desc">
-                    {{imageinfo.desc}}
+                    강아지는 매우 귀엽습니다. 활동적인 모습이 귀엽습니다. 강아지는
+                    기뻐할 때도 귀엽고 시무룩할 때도 귀엽습니다.
                 </p>
-                <a href="#" :title="`${imageinfo.btnText}`" :class="`image__btn ${imageinfo.btnClass2}`">{{imageinfo.btnText}} </a>
+                <a href="#" title="자세히 보기" class="image__btn">자세히 보기</a>
+            </article>
+            <article class="image img2">
+                <h3 class="image__title">야옹 유치원</h3>
+                <p class="image__desc">
+                    고양이는 매우 귀엽습니다. 도도하면서도 애교가 많습니다. 고양이는
+                    은근하게 다가오는 것이 매력적입니다.
+                </p>
+                <a href="#" title="자세히 보기" class="image__btn yellow">자세히 보기</a>
             </article>
         </div>
     </section>
 </template>
 
 <script>
-export default {
-    props: {
-        attr: String,
-        layout: String,
-    },
-
-    data: function () {
-        return {
-            titles: [
-                {
-                    title: "애니멀 유치원",
-                    desc: "🐶 당신의 반려 동물에 맞는 반을 골라주세요!🐱",
-                },
-            ],
-
-            images: [
-                {
-                    title: "멍멍 유치원",
-                    desc: "강아지는 매우 귀엽습니다. 활동적인 모습이 귀엽습니다. 강아지는 기뻐할 때도 귀엽고 시무룩할 때도 귀엽습니다.",
-                    className: "img1",
-                    btnClass: "image__btn",
-                    btnClass2: "",
-                    btnText: "자세히 보기",
-                },
-                {
-                    title: "야옹 유치원",
-                    desc: "고양이는 매우 귀엽습니다. 도도하면서도 애교가 많습니다. 고양이는 은근하게 다가오는 것이 매력적입니다.",
-                    className: "img2",
-                    btnClass: "image__btn",
-                    btnClass2: "yellow",
-                    btnText: "자세히 보기",
-                },
-            ],
-        };
+    export default {
+        props: {
+            attr: String,
+            layout: String
     },
 };
 </script>
@@ -114,9 +93,8 @@ export default {
 }
 
 /* 반응형 */
-@media (max-width: 960px) {
-}
-@media (max-width: 600px) {
+@media(max-width: 960px){}
+@media(max-width: 600px){
     .image__inner {
         flex-direction: column;
     }

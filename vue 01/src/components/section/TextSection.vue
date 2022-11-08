@@ -1,47 +1,77 @@
 <template>
-    <section id="textType" class="text__wrap scroll " :class="attr">
-        <span>ANIMALS</span>
-        <h2 class="mb70">애니멀 유치원을 소개합니다.</h2>
+    <section id="textType" class="text__wrap scroll" :class="attr">
+        <span>{{ titles[0].small }}</span>
+        <h2 class="mb70">{{ titles[0].title }}</h2>
         <div class="text__inner" :class="layout">
-            <div class="text t1">
-                <h3 class="text__title">홈페이지</h3>
-                <p class="text__desc">애니멀 유치원의 공식 홈페이지 입니다. 애니멀 유치원의 각 과정과 활동 사진 등을 확인하실 수 있습니다.</p>
-                <a class="text_btn" href="/">더보기</a>
-            </div>
-            <div class="text t2">
-                <h3 class="text__title">공지사항</h3>
-                <p class="text__desc">애니멀 유치원의 행사, 일정, 모집 등 중요 사항들을 확인할 수 있습니다.</p>
-                <a class="text_btn" href="/">더보기</a>
-            </div>
-            <div class="text t3">
-                <h3 class="text__title">주의해요</h3>
-                <p class="text__desc">당신의 반려 동물에 대한 주의점(알레르기, 행동, 성격 등)을 작성할 수 있습니다.</p>
-                <a class="text_btn" href="/">더보기</a>
-            </div>
-            <div class="text t4">
-                <h3 class="text__title">칭찬해요</h3>
-                <p class="text__desc">이 달의 베스트 애니멀 학생을 확인할 수 있습니다.</p>
-                <a class="text_btn" href="/">더보기</a>
-            </div>
-            <div class="text t5">
-                <h3 class="text__title">추천해요</h3>
-                <p class="text__desc">칭찬해요와 서운해요에 해당하는 투표를 진행하는 곳입니다.</p>
-                <a class="text_btn" href="/">더보기</a>
-            </div>
-            <div class="text t6">
-                <h3 class="text__title">서운해요</h3>
-                <p class="text__desc">각 학생들의 벌점을 확인할 수 있습니다.</p>
-                <a class="text_btn" href="/">더보기</a>
+            <div
+                class="text"
+                v-for="text in texts"
+                v-bind:key="text"
+                :class="`${text.className}`"
+            >
+                <h3 class="text__title">{{ text.title }}</h3>
+                <p class="text__desc">
+                   {{ text.desc }}
+                </p>
+                <a class="text_btn" href="/">{{ text.btn }}</a>
             </div>
         </div>
     </section>
 </template>
 
 <script>
-    export default {
-        props: {
-            attr: String,
-            layout: String
+export default {
+    props: {
+        attr: String,
+        layout: String,
+    },
+    data: function () {
+        return {
+            titles: [
+                {
+                    title: "애니멀 유치원을 소개합니다.",
+                    small: "ANIMALS",
+                },
+            ],
+            texts: [
+                {
+                    className: "t1",
+                    title: "홈페이지",
+                    desc: "애니멀 유치원의 공식 홈페이지 입니다. 애니멀 유치원의 각 과정과 활동 사진 등을 확인하실 수 있습니다.",
+                    btn: "더보기",
+                },
+                {
+                    className: "t2",
+                    title: "공지사항",
+                    desc: "애니멀 유치원의 행사, 일정, 모집 등 중요 사항들을 확인할 수 있습니다.",
+                    btn: "더보기",
+                },
+                {
+                    className: "t3",
+                    title: "주의해요",
+                    desc: "당신의 반려 동물에 대한 주의점(알레르기, 행동, 성격 등)을 작성할 수 있습니다.",
+                    btn: "더보기",
+                },
+                {
+                    className: "t4",
+                    title: "공지사항",
+                    desc: "이 달의 베스트 애니멀 학생을 확인할 수 있습니다.",
+                    btn: "더보기",
+                },
+                {
+                    className: "t5",
+                    title: "칭찬해요",
+                    desc: "칭찬해요와 서운해요에 해당하는 투표를 진행하는 곳입니다.",
+                    btn: "더보기",
+                },
+                {
+                    className: "t6",
+                    title: "서운해요",
+                    desc: "각 학생들의 벌점을 확인할 수 있습니다.",
+                    btn: "더보기",
+                },
+            ],
+        };
     },
 };
 </script>
@@ -82,7 +112,7 @@
     padding-top: 75px;
 }
 .text__title::before {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     top: 0;
@@ -132,7 +162,7 @@
 @media (max-width: 960px) {
     .text {
         width: 49%;
-        background: #F5F5F5;
+        background: #f5f5f5;
     }
 }
 @media (max-width: 600px) {
@@ -144,10 +174,8 @@
     }
 }
 @media (max-width: 480px) {
-   .text {
+    .text {
         width: 100%;
-   }
+    }
 }
-
-
 </style>

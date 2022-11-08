@@ -2,14 +2,14 @@
     <section id="bannerType" class="banner__wrap scroll" :class="attr">
         <h2 class="blind">배너 영역</h2>
         <div class="banner__inner">
-            <h3 class="title">{{text[0].title}}</h3>
+            <h3 class="title">HAPPY ANIMALS</h3>
             <p class="desc">
-                {{text[0].desc}}
+                바쁜 당신의 귀여운 강아지, 고양이들을 위한 안식처 한 번 맡겨보세요!
                 <a href="#" title="고양이 보러가기">
-                    {{text[0].link}}
+                    애니멀 유치원 GO
                 </a>
             </p>
-            <span class="small">{{text[0].small}}</span>
+            <span class="small">CUTE ANIMALS</span>
         </div>
     </section>
 </template>
@@ -20,19 +20,6 @@
             attr: String,
             layout: String
     },
-
-    data: function (){
-        return {
-            text: [
-                {
-                    title: "HAPPY ANIMALS",
-                    desc: "바쁜 당신의 귀여운 강아지, 고양이들을 위한 안식처 한 번 맡겨보세요!",
-                    link: "애니멀 유치원 GO",
-                    small: "CUTE ANIMALS",
-                },
-            ],
-        }
-    }
 };
 </script>
 

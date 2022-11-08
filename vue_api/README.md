@@ -10,4 +10,4 @@ npm run build   <br>
 firebase deploy   
 
 ## firebase URL
-https://vue-api-01.web.app/   
+https://vue-api-01.web.app/ 

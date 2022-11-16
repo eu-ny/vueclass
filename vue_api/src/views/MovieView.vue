@@ -236,7 +236,7 @@ export default {
   background-position: center;
   background-size: cover;
   width: 300px;
-  height: 300px;
+  height: 400px;
 
   .rank {
     position: absolute;
@@ -277,8 +277,4 @@ export default {
   padding-bottom: 240px;
   margin-bottom: 120px;
 }
-// .swiper-3d .swiper-slide-shadow-right,
-// .swiper-3d .swiper-slide-shadow-left {
-//   background-image: none !important;
-// }
 </style>
